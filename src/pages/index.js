@@ -1,21 +1,27 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Logo from '../images/eventhorizonlogo.svg';
+import styled from 'styled-components';
 
-const IndexPage = () => (
+const Splash = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+`;
+const Image = styled.img`
+  height: 150px;
+`;
+
+export default () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Splash>
+      <Image src={Logo} />
+    </Splash>
   </Layout>
-)
-
-export default IndexPage
+);
